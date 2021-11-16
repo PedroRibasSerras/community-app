@@ -1,0 +1,71 @@
+{
+	"markersTypes": [
+		{
+			"name": "Restaurante",
+			"icon": "",
+			"color": "red"
+		},
+		{
+			"name": "Instituto",
+			"icon": "",
+			"color": "blue"
+		},
+		{
+			"name": "Lugar",
+			"icon": "",
+			"color": "green"
+		},
+		{
+			"name": "Portão",
+			"icon": "",
+			"color": "purple"
+		},
+		{
+			"name": "Zona comum",
+			"icon": "",
+			"color": "orange"
+		}
+	],
+	"markers": [
+		{
+			"name": "Arquitetura",
+			"type": "Portão",
+			"coordinates": {
+				"latitude": -22.002739542558373,
+				"longitude": -47.898572116619555
+			}
+		},
+		{
+			"name": "Matadouro",
+			"type": "Portão",
+			"coordinates": {
+				"latitude": -22.005070797775936,
+				"longitude": -47.90041955829763
+			}
+		},
+		{
+			"name": "Física",
+			"type": "Portão",
+			"coordinates": {
+				"latitude": -22.009035558315833,
+				"longitude": -47.89746574607866
+			}
+		},
+		{
+			"name": "Produção",
+			"type": "Portão",
+			"coordinates": {
+				"latitude": -22.011428961430678,
+				"longitude": -47.89631843081468
+			}
+		},
+		{
+			"name": "Matemática",
+			"type": "Portão",
+			"coordinates": {
+				"latitude": -22.0062831367142,
+				"longitude": -47.895243199945085
+			}
+		}
+	]
+}
