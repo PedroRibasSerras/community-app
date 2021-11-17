@@ -71,6 +71,7 @@ export function MapProvider({ children }) {
 
 	function toggleType(typeName) {
 		let toggledOnType = !onTypes[typeName]
+
 		setOnTypes((prev) => {
 			let newOnTypes = { ...prev }
 			newOnTypes[typeName] = !newOnTypes[typeName]
@@ -79,7 +80,7 @@ export function MapProvider({ children }) {
 		})
 		setMarkerComponents((prev) => {
 			return prev.map((markerComponent) => {
-				if (markerComponent.props.markerType != typeName) {
+				if (markerComponent.props.type != typeName) {
 					return markerComponent
 				} else {
 					return cloneElement(markerComponent, {

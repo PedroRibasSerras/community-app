@@ -18,7 +18,7 @@ export default function Map({ children }) {
 			<MapView
 				style={styles.map}
 				region={region}
-				onRegionChage={setRegion}
+				// onRegionChage={setRegion}
 				// mapType={'satellite'}
 				// showsBuildings={false}
 				// showsUserLocation={true}
