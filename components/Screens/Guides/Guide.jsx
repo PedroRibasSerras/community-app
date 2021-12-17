@@ -25,6 +25,7 @@ export default function Guide({ closeGuide }) {
 		Animated.timing(verticalMoveAnimation, {
 			toValue: 0,
 			duration: 600,
+			useNativeDriver: false,
 		}).start()
 	}
 
@@ -33,6 +34,7 @@ export default function Guide({ closeGuide }) {
 		Animated.timing(verticalMoveAnimation, {
 			toValue: -Dimensions.get('window').height,
 			duration: 600,
+			useNativeDriver: false,
 		}).start()
 	}
 
