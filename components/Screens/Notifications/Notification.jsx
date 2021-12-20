@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { View, StyleSheet } from 'react-native'
 
 import H2 from '../../common/interpreterElements/H2'
@@ -7,17 +7,32 @@ import Divider from '../../common/interpreterElements/Divider'
 import Paragraph from '../../common/interpreterElements/Paragraph'
 import LinkButton from '../../common/FormsComponents/LinkButton'
 
+import { UserContext } from '../../../contexts/UserContext'
+
 export default function Notification({
 	notification,
 	notificationPageControl,
 	back,
 }) {
+	const { user, deleteNotification } = useContext(UserContext)
 	return (
 		<>
 			<View style={styles.titleContainer}>
 				<View style={styles.controlButtons}>
-					<H3> Delete |</H3>
-					<H3> Edite |</H3>
+					{user != null && user.id == notification.creator && (
+						<LinkButton
+							onPress={() => {
+								deleteNotification(
+									notification.title,
+									notification.date
+								)
+								notificationPageControl(back)
+							}}
+							style={{ marginTop: 0, padding: 0 }}
+						>
+							Delete |
+						</LinkButton>
+					)}
 					<LinkButton
 						onPress={() => {
 							notificationPageControl(back)
@@ -31,14 +46,18 @@ export default function Notification({
 				<H2>{notification.title}</H2>
 			</View>
 
-			<H3 style={{ color: 'grey' }}>Creator: {notification.creator}</H3>
+			<H3 style={{ color: 'grey' }}>
+				Creator: {notification.creatorName}
+			</H3>
 			<H3 style={{ color: 'grey' }}>
 				Creation Data: {notification.date}
 			</H3>
 
 			<Divider></Divider>
 
-			<Paragraph style={{ marginTop: 10 }}>{notification.desc}</Paragraph>
+			<Paragraph style={{ marginTop: 10 }}>
+				{notification.description}
+			</Paragraph>
 		</>
 	)
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 
 import H2 from '../../common/interpreterElements/H2'
@@ -6,9 +6,13 @@ import Input from '../../common/FormsComponents/Input'
 import LinkButton from '../../common/FormsComponents/LinkButton'
 import SubmitButton from '../../common/FormsComponents/SubmitButton'
 
+import { UserContext } from '../../../contexts/UserContext'
+
 export default function CreateNotification({ notificationPageControl, back }) {
 	const [title, onChangeTitle] = useState()
 	const [description, onChangeDescription] = useState()
+
+	const { createNotification } = useContext(UserContext)
 
 	return (
 		<>
@@ -33,11 +37,16 @@ export default function CreateNotification({ notificationPageControl, back }) {
 				value={title}
 			/>
 			<Input
-				label={'Descreption:'}
+				label={'Description:'}
 				onChangeText={onChangeDescription}
 				value={description}
 			/>
-			<SubmitButton>
+			<SubmitButton
+				onPress={() => {
+					if (createNotification(title, description))
+						notificationPageControl(back)
+				}}
+			>
 				<Text style={{ fontSize: 20, color: 'white' }}>Create</Text>
 			</SubmitButton>
 		</>

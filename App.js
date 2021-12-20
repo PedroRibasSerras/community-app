@@ -9,27 +9,30 @@ import Notifications from './components/Screens/Notifications/NotificationsScree
 import EventsScreen from './components/Screens/Events/EventsScreen'
 
 import { MapProvider } from './contexts/MapContext'
+import { UserProvider } from './contexts/UserContext'
 
 const Drawer = createDrawerNavigator()
 
 export default function App() {
 	return (
-		<MapProvider>
-			<NavigationContainer>
-				<Drawer.Navigator initialRouteName='Home'>
-					<Drawer.Screen name='Home' component={Home} />
-					<Drawer.Screen name='Guides' component={Guides} />
-					<Drawer.Screen
-						name='Organizational'
-						component={Organizational}
-					/>
-					<Drawer.Screen
-						name='Notifications'
-						component={Notifications}
-					/>
-					<Drawer.Screen name='Events' component={EventsScreen} />
-				</Drawer.Navigator>
-			</NavigationContainer>
-		</MapProvider>
+		<UserProvider>
+			<MapProvider>
+				<NavigationContainer>
+					<Drawer.Navigator initialRouteName='Home'>
+						<Drawer.Screen name='Home' component={Home} />
+						<Drawer.Screen name='Guides' component={Guides} />
+						<Drawer.Screen
+							name='Organizational'
+							component={Organizational}
+						/>
+						<Drawer.Screen
+							name='Notifications'
+							component={Notifications}
+						/>
+						<Drawer.Screen name='Events' component={EventsScreen} />
+					</Drawer.Navigator>
+				</NavigationContainer>
+			</MapProvider>
+		</UserProvider>
 	)
 }

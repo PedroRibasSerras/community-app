@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Text, ScrollView, View, StyleSheet } from 'react-native'
 import H1 from '../../common/interpreterElements/H1'
 import Divider from '../../common/interpreterElements/Divider'
@@ -6,12 +6,22 @@ import Input from '../../common/FormsComponents/Input'
 import SubmitButton from '../../common/FormsComponents/SubmitButton'
 import LinkButton from '../../common/FormsComponents/LinkButton'
 
+import { UserContext } from '../../../contexts/UserContext'
+
 export default function Login({ openRegister }) {
 	const [email, onChangeEmail] = useState(null)
 	const [password, onChangePassword] = useState(null)
+	const [loginError, setLoginError] = useState(false)
+
+	const { login } = useContext(UserContext)
 
 	return (
 		<View style={styles.container}>
+			{loginError && (
+				<Text style={{ backgroundColor: 'red' }}>
+					Email and/or password wrong!
+				</Text>
+			)}
 			<View style={styles.Header}>
 				<H1>Login</H1>
 			</View>
@@ -34,7 +44,15 @@ export default function Login({ openRegister }) {
 							value={password}
 							secureTextEntry={true}
 						/>
-						<SubmitButton>
+						<SubmitButton
+							onPress={async () => {
+								let loginSuccess = await login(email, password)
+								console.log(loginSuccess)
+								if (!loginSuccess) {
+									setLoginError(!loginSuccess)
+								}
+							}}
+						>
 							<Text style={{ fontSize: 20, color: 'white' }}>
 								Login
 							</Text>

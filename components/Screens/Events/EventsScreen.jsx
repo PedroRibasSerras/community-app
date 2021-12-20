@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { ScrollView, View, StyleSheet } from 'react-native'
 
 import AllEvents from './AllEvents'
@@ -6,12 +6,20 @@ import MyEvents from './MyEvents'
 import Event from './Event'
 import CreateEvent from './CreateEvent'
 
+import { UserContext } from '../../../contexts/UserContext'
+
 export default function EventsScreen({ navigation }) {
 	const [eventPageName, setEventPageName] = useState('AllEvents')
 
 	const [lastPage, setLastPage] = useState()
 
 	const [currentEvent, setCurrentEvent] = useState()
+
+	const { getAllEvents, events } = useContext(UserContext)
+
+	useEffect(() => {
+		if (events == null) getAllEvents()
+	})
 
 	function setAEvent(event) {
 		setCurrentEvent(event)

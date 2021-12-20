@@ -1,19 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { Text, ScrollView, View, StyleSheet } from 'react-native'
-import SubmitButton from '../../common/FormsComponents/SubmitButton'
-import notifications from '../../../mok/notifications.json'
+
 import AllNotifications from './AllNotifications'
 import MyNotifications from './MyNotifications'
 import Notification from './Notification'
 import CreateNotification from './CreateNotification'
 
+import { UserContext } from '../../../contexts/UserContext'
+
 export default function Notifications({ navigation }) {
 	const [notificationPageName, setNotificationPageName] =
 		useState('AllNotifications')
 
+	const { getAllNotifications, notifications } = useContext(UserContext)
+
 	const [lastPage, setLastPage] = useState()
 
 	const [currentNotification, setCurrentNotification] = useState()
+
+	useEffect(() => {
+		if (notifications == null) getAllNotifications()
+	})
 
 	function setANotification(notification) {
 		setCurrentNotification(notification)

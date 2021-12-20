@@ -1,11 +1,11 @@
 {
 	"chapters": [
 		{
-			"title": "Caption 1 - inicio",
+			"title": "Chapter 1 - inicio",
 			"guides": ["Bem-vindo Bixo!!", "CAASO", "Secretarias acadêmicas"]
 		},
 		{
-			"title": "Caption 2 - conhecendo a Usp - São Carlos",
+			"title": "Chapter 2 - conhecendo a Usp - São Carlos",
 			"guides": [
 				"Campus-1",
 				"Campus-2",
@@ -17,12 +17,12 @@
 			]
 		},
 		{
-			"title": "Caption 3 - Novas portas estão abertas....",
+			"title": "Chapter 3 - Novas portas estão abertas....",
 			"guides": [
 				"Introdução",
-				"Iniciações cinêntíficas",
+				"Iniciações científicas",
 				"Intercâmbios",
-				"Sanduiches"
+				"Sanduíches"
 			]
 		}
 	]

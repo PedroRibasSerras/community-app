@@ -3,18 +3,29 @@ import MapView from 'react-native-maps'
 import { StyleSheet, View, Dimensions } from 'react-native'
 import MarkersFilter from './MarkersFilter/MarkersFilter'
 
-export default function Map({ children }) {
+export default function Map({
+	children,
+	filter = true,
+	latitude,
+	longitude,
+	border = true,
+}) {
 	const [region, setRegion] = useState({
-		latitude: -22.00631268836857,
-		longitude: -47.896442789352236,
+		latitude: latitude,
+		longitude: longitude,
 		latitudeDelta: 0.00811,
 		longitudeDelta: 0.00811,
 	})
 
 	return (
 		<View style={styles.container}>
-			<View style={styles.marginTop}></View>
-			<View style={styles.marginBottom}></View>
+			{border && (
+				<>
+					<View style={styles.marginTop}></View>
+					<View style={styles.marginBottom}></View>
+				</>
+			)}
+
 			<MapView
 				style={styles.map}
 				region={region}
@@ -25,7 +36,7 @@ export default function Map({ children }) {
 			>
 				{children}
 			</MapView>
-			<MarkersFilter />
+			{filter && <MarkersFilter />}
 		</View>
 	)
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Text, View, StyleSheet, Picker, ScrollView } from 'react-native'
 import H1 from '../../common/interpreterElements/H1'
 import Divider from '../../common/interpreterElements/Divider'
@@ -7,15 +7,24 @@ import LinkButton from '../../common/FormsComponents/LinkButton'
 import Select from '../../common/FormsComponents/Select'
 import Input from '../../common/FormsComponents/Input'
 
+import { UserContext } from '../../../contexts/UserContext'
+
 export default function Register({ openLogin }) {
 	const [name, onChangeName] = useState(null)
-	const [type, setType] = useState('SA')
+	const [type, setType] = useState(1)
 	const [email, onChangeEmail] = useState(null)
 	const [password, onChangePassword] = useState(null)
 	const [confirmPassword, onChangeConfirmPassword] = useState(null)
 
+	const [errorMessage, setErrorMessage] = useState('')
+
+	const { register } = useContext(UserContext)
+
 	return (
 		<View style={styles.container}>
+			{!!errorMessage && (
+				<Text style={{ backgroundColor: 'red' }}>{errorMessage}</Text>
+			)}
 			<View style={styles.Header}>
 				<H1>Create an account</H1>
 			</View>
@@ -37,15 +46,12 @@ export default function Register({ openLogin }) {
 							selectedValue={type}
 							onValueChange={setType}
 						>
+							<Picker.Item label='Centro Acadêmico' value={1} />
 							<Picker.Item
 								label='Secretaria Acadêmica'
-								value='SA'
+								value={2}
 							/>
-							<Picker.Item label='Centro Acadêmico' value='CA' />
-							<Picker.Item
-								label='Extracurricular'
-								value='Extra'
-							/>
+							<Picker.Item label='Extracurricular' value={3} />
 						</Select>
 						<Input
 							label={'Email:'}
@@ -64,7 +70,25 @@ export default function Register({ openLogin }) {
 							value={confirmPassword}
 							secureTextEntry={true}
 						/>
-						<SubmitButton>
+						<SubmitButton
+							onPress={async () => {
+								if (password == confirmPassword) {
+									let error = await register(
+										name,
+										type,
+										email,
+										password
+									)
+									console.log(error)
+									if (!!error) {
+										setErrorMessage(error)
+									}
+								} else
+									setErrorMessage(
+										'Password != confirmPassword'
+									)
+							}}
+						>
 							<Text style={{ fontSize: 20, color: 'white' }}>
 								Register
 							</Text>

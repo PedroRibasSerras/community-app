@@ -1,6 +1,5 @@
 import React, { useEffect, createContext, cloneElement } from 'react'
 import { useState } from 'react'
-import mapData from '../mok/Map.json'
 import ClickableMarker from '../components/Maps/ClickableMarker'
 
 export const MapContext = createContext({})
@@ -12,34 +11,39 @@ export function MapProvider({ children }) {
 	const [markerComponents, setMarkerComponents] = useState(null)
 
 	useEffect(async () => {
-		let error = false
+		if (markersTypes == null) {
+			let error = false
 
-		let resMarkersTypes = null
-		let resMarkers = null
+			let resMarkersTypes = null
+			let resMarkers = null
 
-		try {
-			// const response = await fetch('../')
-			let response = mapData
-			// resChapters = await response.json().chapters
-			resMarkersTypes = response.markersTypes
+			try {
+				const markers = await fetch(
+					'http://192.168.15.100:3333/localizacoes'
+				)
 
-			resMarkers = response.markers
-			resMarkers.forEach((marker) => {
-				for (let i = 0; i < resMarkersTypes.length; i++) {
-					if (marker.type == resMarkersTypes[i].name) {
-						marker.type = resMarkersTypes[i]
-						break
+				let response = await markers.json()
+
+				resMarkersTypes = response.data.markersTypes
+				resMarkers = response.data.markers
+
+				resMarkers.forEach((marker) => {
+					for (let i = 0; i < resMarkersTypes.length; i++) {
+						if (marker.type == resMarkersTypes[i].name) {
+							marker.type = resMarkersTypes[i]
+							break
+						}
 					}
-				}
-			})
-		} catch (error) {
-			console.error(error)
-			error = true
-		}
+				})
+			} catch (error) {
+				console.error(error)
+				error = true
+			}
 
-		if (error == false) {
-			setMarkersTypes(resMarkersTypes)
-			setMarkers(resMarkers)
+			if (error == false) {
+				setMarkersTypes(resMarkersTypes)
+				setMarkers(resMarkers)
+			}
 		}
 	})
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 
 import H2 from '../../common/interpreterElements/H2'
@@ -6,11 +6,22 @@ import Input from '../../common/FormsComponents/Input'
 import LinkButton from '../../common/FormsComponents/LinkButton'
 import SubmitButton from '../../common/FormsComponents/SubmitButton'
 
+import { UserContext } from '../../../contexts/UserContext'
+
 export default function CreateEvent({ eventPageControl, back }) {
 	const [title, onChangeTitle] = useState()
 	const [description, onChangeDescription] = useState()
 	const [latitude, onChangeLatitude] = useState()
 	const [longitude, onChangeLongitude] = useState()
+	const [day, onChangeDay] = useState()
+	const [month, onChangeMonth] = useState()
+	const [year, onChangeYear] = useState()
+	const [hour, onChangeHour] = useState()
+	const [minute, onChangeMinute] = useState()
+
+	const [endereco, onChangeEndereco] = useState()
+
+	const { createEvent } = useContext(UserContext)
 
 	return (
 		<>
@@ -35,7 +46,7 @@ export default function CreateEvent({ eventPageControl, back }) {
 				value={title}
 			/>
 			<Input
-				label={'Descreption:'}
+				label={'Description:'}
 				onChangeText={onChangeDescription}
 				value={description}
 			/>
@@ -50,7 +61,39 @@ export default function CreateEvent({ eventPageControl, back }) {
 				onChangeText={onChangeLongitude}
 				value={longitude}
 			/>
-			<SubmitButton>
+			<Input label={'Day:'} onChangeText={onChangeDay} value={day} />
+			<Input
+				label={'Month:'}
+				onChangeText={onChangeMonth}
+				value={month}
+			/>
+			<Input label={'Year:'} onChangeText={onChangeYear} value={year} />
+			<Input label={'Hour:'} onChangeText={onChangeHour} value={hour} />
+			<Input
+				label={'Minute:'}
+				onChangeText={onChangeMinute}
+				value={minute}
+			/>
+			<Input
+				label={'Endereco:'}
+				onChangeText={onChangeEndereco}
+				value={endereco}
+			/>
+			<SubmitButton
+				onPress={() => {
+					if (
+						createEvent(
+							title,
+							description,
+							latitude,
+							longitude,
+							`${year}-${month}-${day} ${hour}:${minute}:00`,
+							endereco
+						)
+					)
+						eventPageControl(back)
+				}}
+			>
 				<Text style={{ fontSize: 20, color: 'white' }}>Create</Text>
 			</SubmitButton>
 		</>
