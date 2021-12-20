@@ -72,64 +72,95 @@ export default function Guide({ closeGuide }) {
 				<ScrollView style={styles.contenteContainer}>
 					<H2>Por onde começar?</H2>
 					<Paragraph>
-						De onde vem a calma daquele cara ele não sabe ser melhor
-						viu ele não sabe não viu e as vezes sá com um fio é o
-						mundo que anda hostil o mundo todo é hostil.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Quisque blandit ante lectus, at venenatis purus blandit
+						sed. Vivamus elementum, ipsum at feugiat eleifend, massa
+						quam scelerisque sem, quis laoreet sem leo eget orci.
+						Quisque accumsan eget sapien et ultricies. Morbi
+						facilisis mi ex, nec ultrices velit tincidunt et. Donec
+						interdum mauris at nisl interdum, vel porta dui
+						suscipit. In sed orci quis justo fermentum feugiat.
+						Integer sit amet quam id enim bibendum porttitor in et
+						lorem. Mauris et interdum nisi. Aliquam in fringilla
+						lacus.
 					</Paragraph>
 					<Paragraph>
-						Pinto de onde vem a calma daquele cara ele não sabe ser
-						melhor viu ele não sabe não viu e as vezes sá com um fio
-						é o mundo que anda hostil o mundo todo é hostil.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Quisque blandit ante lectus, at venenatis purus blandit
+						sed. Vivamus elementum, ipsum at feugiat eleifend, massa
+						quam scelerisque sem, quis laoreet sem leo eget orci.
+						Quisque accumsan eget sapien et ultricies. Morbi
+						facilisis mi ex, nec ultrices velit tincidunt et. Donec
+						interdum mauris at nisl interdum, vel porta dui
+						suscipit. In sed orci quis justo fermentum feugiat.
+						Integer sit amet quam id enim bibendum porttitor in et
+						lorem. Mauris et interdum nisi. Aliquam in fringilla
+						lacus.
 					</Paragraph>
 					<Paragraph>
-						Pinto de onde vem a calma daquele cara ele não sabe ser
-						melhor viu ele não sabe não viu e as vezes sá com um fio
-						é o mundo que anda hostil o mundo todo é hostil.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Quisque blandit ante lectus, at venenatis purus blandit
+						sed. Vivamus elementum, ipsum at feugiat eleifend, massa
+						quam scelerisque sem, quis laoreet sem leo eget orci.
+						Quisque accumsan eget sapien et ultricies. Morbi
+						facilisis mi ex, nec ultrices velit tincidunt et. Donec
+						interdum mauris at nisl interdum, vel porta dui
+						suscipit. In sed orci quis justo fermentum feugiat.
+						Integer sit amet quam id enim bibendum porttitor in et
+						lorem. Mauris et interdum nisi. Aliquam in fringilla
+						lacus.
 					</Paragraph>
 					<Paragraph>
-						Pinto de onde vem a calma daquele cara ele não sabe ser
-						melhor viu ele não sabe não viu e as vezes sá com um fio
-						é o mundo que anda hostil o mundo todo é hostil.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Quisque blandit ante lectus, at venenatis purus blandit
+						sed. Vivamus elementum, ipsum at feugiat eleifend, massa
+						quam scelerisque sem, quis laoreet sem leo eget orci.
+						Quisque accumsan eget sapien et ultricies. Morbi
+						facilisis mi ex, nec ultrices velit tincidunt et. Donec
+						interdum mauris at nisl interdum, vel porta dui
+						suscipit. In sed orci quis justo fermentum feugiat.
+						Integer sit amet quam id enim bibendum porttitor in et
+						lorem. Mauris et interdum nisi. Aliquam in fringilla
+						lacus.
 					</Paragraph>
 					<Paragraph>
-						Pinto de onde vem a calma daquele cara ele não sabe ser
-						melhor viu ele não sabe não viu e as vezes sá com um fio
-						é o mundo que anda hostil o mundo todo é hostil.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Quisque blandit ante lectus, at venenatis purus blandit
+						sed. Vivamus elementum, ipsum at feugiat eleifend, massa
+						quam scelerisque sem, quis laoreet sem leo eget orci.
+						Quisque accumsan eget sapien et ultricies. Morbi
+						facilisis mi ex, nec ultrices velit tincidunt et. Donec
+						interdum mauris at nisl interdum, vel porta dui
+						suscipit. In sed orci quis justo fermentum feugiat.
+						Integer sit amet quam id enim bibendum porttitor in et
+						lorem. Mauris et interdum nisi. Aliquam in fringilla
+						lacus.
 					</Paragraph>
 					<Paragraph>
-						Pinto de onde vem a calma daquele cara ele não sabe ser
-						melhor viu ele não sabe não viu e as vezes sá com um fio
-						é o mundo que anda hostil o mundo todo é hostil.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Quisque blandit ante lectus, at venenatis purus blandit
+						sed. Vivamus elementum, ipsum at feugiat eleifend, massa
+						quam scelerisque sem, quis laoreet sem leo eget orci.
+						Quisque accumsan eget sapien et ultricies. Morbi
+						facilisis mi ex, nec ultrices velit tincidunt et. Donec
+						interdum mauris at nisl interdum, vel porta dui
+						suscipit. In sed orci quis justo fermentum feugiat.
+						Integer sit amet quam id enim bibendum porttitor in et
+						lorem. Mauris et interdum nisi. Aliquam in fringilla
+						lacus.
 					</Paragraph>
 					<Paragraph>
-						Pinto de onde vem a calma daquele cara ele não sabe ser
-						melhor viu ele não sabe não viu e as vezes sá com um fio
-						é o mundo que anda hostil o mundo todo é hostil.
-					</Paragraph>
-					<Paragraph>
-						Pinto de onde vem a calma daquele cara ele não sabe ser
-						melhor viu ele não sabe não viu e as vezes sá com um fio
-						é o mundo que anda hostil o mundo todo é hostil.
-					</Paragraph>
-					<Paragraph>
-						Pinto de onde vem a calma daquele cara ele não sabe ser
-						melhor viu ele não sabe não viu e as vezes sá com um fio
-						é o mundo que anda hostil o mundo todo é hostil.
-					</Paragraph>
-					<Paragraph>
-						Pinto de onde vem a calma daquele cara ele não sabe ser
-						melhor viu ele não sabe não viu e as vezes sá com um fio
-						é o mundo que anda hostil o mundo todo é hostil.
-					</Paragraph>
-					<Paragraph>
-						Pinto de onde vem a calma daquele cara ele não sabe ser
-						melhor viu ele não sabe não viu e as vezes sá com um fio
-						é o mundo que anda hostil o mundo todo é hostil.
-					</Paragraph>
-					<Paragraph>
-						Pinto de onde vem a calma daquele cara ele não sabe ser
-						melhor viu ele não sabe não viu e as vezes sá com um fio
-						é o mundo que anda hostil o mundo todo é hostil.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Quisque blandit ante lectus, at venenatis purus blandit
+						sed. Vivamus elementum, ipsum at feugiat eleifend, massa
+						quam scelerisque sem, quis laoreet sem leo eget orci.
+						Quisque accumsan eget sapien et ultricies. Morbi
+						facilisis mi ex, nec ultrices velit tincidunt et. Donec
+						interdum mauris at nisl interdum, vel porta dui
+						suscipit. In sed orci quis justo fermentum feugiat.
+						Integer sit amet quam id enim bibendum porttitor in et
+						lorem. Mauris et interdum nisi. Aliquam in fringilla
+						lacus.
 					</Paragraph>
 				</ScrollView>
 			</Animated.View>
