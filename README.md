@@ -16,5 +16,5 @@ GitHub Back-end: https://github.com/PedroRibasSerras/community-api
    
    4- Esse é um projeto que utiliza o expo, então é preciso do cliente dele no celular ou em um emulador de celular. Tendo a CLI do expo instalada, abra a aplicação no expo.
    
-   5- Para que o aplicativo esteja funcionando 100% é necessário que o back-end (API e Banco) estejam rodando em alguma máquina que seja possível de conectar. Estando com a API rodando, pegue o IP do servidor da API e coloque e substitua no arquivo serverIp.js na pasta constants (é importante colocar qual é a porta de acesso se for necessário, da mesma forma como está no exemplo do código).
+   5- Para que o aplicativo esteja funcionando 100% é necessário que o back-end (API e Banco) estejam rodando em alguma máquina que seja possível de conectar. Estando com a API rodando, pegue o IP de seu servidor e substitua no arquivo 'serverIp.js' na pasta 'constants' (é importante colocar qual é a porta de acesso se for necessário, da mesma forma como está no exemplo do código).
  
