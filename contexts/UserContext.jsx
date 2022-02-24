@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react'
+import serverIp from '../constants/serverIp'
 
 export const UserContext = createContext({})
 
@@ -10,22 +11,19 @@ export function UserProvider({ children }) {
 	async function register(name, type, email, password) {
 		try {
 			let error = false
-			const result = await fetch(
-				'http://192.168.15.100:3333/criarContaOrganizacional',
-				{
-					method: 'POST',
-					headers: {
-						Accept: 'application/json',
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						nome: name,
-						tipo: type,
-						email: email,
-						senha: password,
-					}),
-				}
-			)
+			const result = await fetch(serverIp + '/criarContaOrganizacional', {
+				method: 'POST',
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					nome: name,
+					tipo: type,
+					email: email,
+					senha: password,
+				}),
+			})
 				.then((result) => {
 					return result.json()
 				})
@@ -57,20 +55,17 @@ export function UserProvider({ children }) {
 
 	async function login(email, password) {
 		try {
-			const user = await fetch(
-				'http://192.168.15.100:3333/loginOrganizacional',
-				{
-					method: 'POST',
-					headers: {
-						Accept: 'application/json',
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						email: email,
-						senha: password,
-					}),
-				}
-			)
+			const user = await fetch(serverIp + '/loginOrganizacional', {
+				method: 'POST',
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					email: email,
+					senha: password,
+				}),
+			})
 				.then((result) => {
 					return result.json()
 				})
@@ -95,7 +90,7 @@ export function UserProvider({ children }) {
 	}
 
 	async function getAllNotifications() {
-		const result = await fetch('http://192.168.15.100:3333/notificacoes')
+		const result = await fetch(serverIp + '/notificacoes')
 			.then((data) => {
 				return data.json()
 			})
@@ -115,20 +110,17 @@ export function UserProvider({ children }) {
 
 	async function deleteNotification(title, date) {
 		try {
-			const result = await fetch(
-				'http://192.168.15.100:3333/notificacoes/delete',
-				{
-					method: 'POST',
-					headers: {
-						Accept: 'application/json',
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						title,
-						date,
-					}),
-				}
-			)
+			const result = await fetch(serverIp + '/notificacoes/delete', {
+				method: 'POST',
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					title,
+					date,
+				}),
+			})
 				.then((result) => {
 					return result.json()
 				})
@@ -150,21 +142,18 @@ export function UserProvider({ children }) {
 
 	async function createNotification(title, description) {
 		try {
-			const result = await fetch(
-				'http://192.168.15.100:3333/notificacoes/criar',
-				{
-					method: 'POST',
-					headers: {
-						Accept: 'application/json',
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						title,
-						description,
-						creator: user.id,
-					}),
-				}
-			)
+			const result = await fetch(serverIp + '/notificacoes/criar', {
+				method: 'POST',
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					title,
+					description,
+					creator: user.id,
+				}),
+			})
 				.then((result) => {
 					return result.json()
 				})
@@ -185,7 +174,7 @@ export function UserProvider({ children }) {
 	}
 
 	async function getAllEvents() {
-		const result = await fetch('http://192.168.15.100:3333/eventos')
+		const result = await fetch(serverIp + '/eventos')
 			.then((data) => {
 				return data.json()
 			})
@@ -205,20 +194,17 @@ export function UserProvider({ children }) {
 
 	async function deleteEvent(title, date) {
 		try {
-			const result = await fetch(
-				'http://192.168.15.100:3333/eventos/delete',
-				{
-					method: 'POST',
-					headers: {
-						Accept: 'application/json',
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						title,
-						date,
-					}),
-				}
-			)
+			const result = await fetch(serverIp + '/eventos/delete', {
+				method: 'POST',
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					title,
+					date,
+				}),
+			})
 				.then((result) => {
 					return result.json()
 				})
@@ -247,25 +233,22 @@ export function UserProvider({ children }) {
 		endereco
 	) {
 		try {
-			const result = await fetch(
-				'http://192.168.15.100:3333/eventos/criar',
-				{
-					method: 'POST',
-					headers: {
-						Accept: 'application/json',
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						title,
-						description,
-						latitude,
-						longitude,
-						dataEhoraEvento,
-						endereco,
-						criador: user.id,
-					}),
-				}
-			)
+			const result = await fetch(serverIp + '/eventos/criar', {
+				method: 'POST',
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					title,
+					description,
+					latitude,
+					longitude,
+					dataEhoraEvento,
+					endereco,
+					criador: user.id,
+				}),
+			})
 				.then((result) => {
 					return result.json()
 				})

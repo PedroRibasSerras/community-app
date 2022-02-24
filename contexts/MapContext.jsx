@@ -2,6 +2,8 @@ import React, { useEffect, createContext, cloneElement } from 'react'
 import { useState } from 'react'
 import ClickableMarker from '../components/Maps/ClickableMarker'
 
+import serverIp from '../constants/serverIp'
+
 export const MapContext = createContext({})
 
 export function MapProvider({ children }) {
@@ -18,9 +20,7 @@ export function MapProvider({ children }) {
 			let resMarkers = null
 
 			try {
-				const markers = await fetch(
-					'http://192.168.15.100:3333/localizacoes'
-				)
+				const markers = await fetch(serverIp + '/localizacoes')
 
 				let response = await markers.json()
 
